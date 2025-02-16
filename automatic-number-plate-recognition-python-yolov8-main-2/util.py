@@ -96,27 +96,36 @@ def format_license(text):
 
 def read_license_plate(license_plate_crop):
     detections = reader.readtext(license_plate_crop)
-    print(detections)
+    
+    all_letters = []
+    all_numbers = []
+    best_score = 0
+
     for detection in detections:
         bbox, text, score = detection
 
-        # Remove any non-alphabetic or non-numeric characters
-        cleaned_text = ''.join(c for c in text if c.isalpha() or c.isdigit())
-        cleaned_text = cleaned_text.upper()
+        # Remove non-alphabetic/non-numeric characters and convert to uppercase
+        cleaned_text = ''.join(c for c in text if c.isalnum()).upper()
 
-        i = 0
-        while i < len(cleaned_text) and cleaned_text[i].isdigit():
-            i += 1
+        # Separate letters and numbers
+        letters = ''.join(c for c in cleaned_text if c.isalpha())
+        numbers = ''.join(c for c in cleaned_text if c.isdigit())
 
-        numbers = cleaned_text[:i]
-        letters = cleaned_text[i:]
+        if letters:
+            all_letters.append(letters)
+        if numbers:
+            all_numbers.append(numbers)
 
-        formatted_text = f"{letters} {numbers}"
+        # Keep track of the highest confidence score
+        best_score = max(best_score, score)
 
-        if license_complies_format(formatted_text):
-            return formatted_text, score
+    # Combine letters and numbers
+    formatted_text = f"{''.join(all_letters)} {''.join(all_numbers)}" if all_letters and all_numbers else None
     
-    return None, None
+
+    return (formatted_text, best_score) if formatted_text else (None, None)
+
+
 
 
 

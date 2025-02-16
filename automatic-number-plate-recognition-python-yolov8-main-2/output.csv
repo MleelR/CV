@@ -1,1 +1,2 @@
-frame_nmr,car_id,car_bbox,license_bbox,license_text,license_bbox_score,license_text_score
+image_name,car_id,car_bbox,license_bbox,license_text,license_bbox_score,license_text_score
+IMG_9518.jpeg,1.0,"[7.988818168640137, 2.486123561859131, 4028.768310546875, 2680.669677734375]","[1716.384033203125, 1410.6585693359375, 2559.135986328125, 1657.9169921875]",LUD 1229,0.8195286393165588,0.999042088857666
