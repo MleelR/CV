@@ -27,6 +27,7 @@ results/output.csv
 Project Structure
 
 YOLO_License_Plate_Recognition/
+
 │── models/          # Pre-trained YOLO models
 
 │── data/            # Input images/videos
@@ -36,18 +37,32 @@ YOLO_License_Plate_Recognition/
 │   ├── main.ipynb   # Main script
 
 │   ├── util.py      # Helper functions
+
 │   ├── sort.py      # Online and real-time tracking for 2D multiple object tracking in videos
+
 │   ├── add_missing_data.py # Data processing
+
 │   ├── visualize.py # Visualization utilities
+
 │── results/         # CSV logs and detection outputs
+
 │── requirements.txt # Dependencies libraries that need to be installed
+
 │── README.md        # This guide
+
 YOLO_License_Plate_Recognition/
+
 │── models/          # Pre-trained YOLO models
+
 │── data/            # Input images/videos
+
 │── notebooks/       # Jupyter Notebooks for testing
+
 │── src/             # Source code scripts
+
 │── results/         # CSV logs and detection outputs
+
 │── requirements.txt # Python dependencies
+
 │── README.md        # This guide
 
