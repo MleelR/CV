@@ -28,9 +28,13 @@ Project Structure
 
 YOLO_License_Plate_Recognition/
 │── models/          # Pre-trained YOLO models
+
 │── data/            # Input images/videos
+
 │── notebooks/       # Jupyter Notebooks for testing
+
 │   ├── main.ipynb   # Main script
+
 │   ├── util.py      # Helper functions
 │   ├── sort.py      # Online and real-time tracking for 2D multiple object tracking in videos
 │   ├── add_missing_data.py # Data processing
